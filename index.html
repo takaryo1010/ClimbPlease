@@ -17,6 +17,7 @@
         WebAssembly.instantiateStreaming(fetch("./main.wasm"), go.importObject).then((result) => {
             requestAnimationFrame(go.run(result.instance));
         });
+        
     </script>
 </body>
 </html>
