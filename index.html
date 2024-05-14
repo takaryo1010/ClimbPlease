@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClimbPlease</title>
+    <title>Ebitenゲームの埋め込み</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -11,13 +11,12 @@
     <h1>Climb Only</h1>
     <script src="https://cdn.jsdelivr.net/gh/golang/go/misc/wasm/wasm_exec.js"></script>
 
-    
+
     <script>
         const go = new Go();
-        WebAssembly.instantiateStreaming(fetch("./main.wasm"), go.importObject).then((result) => {
+        WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
             requestAnimationFrame(go.run(result.instance));
         });
-
     </script>
 </body>
 </html>
